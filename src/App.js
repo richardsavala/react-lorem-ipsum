@@ -6,7 +6,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hell world");
+    setText(data);
   };
 
   return (
@@ -21,8 +21,15 @@ function App() {
           value={count}
           onChange={(e) => setCount(e.target.value)}
         />
-        <button className="btn" type="submit"></button>
+        <button className="btn" type="submit">
+          generate{" "}
+        </button>
       </form>
+      <article className="lorem-text">
+        {text.map((item, index) => {
+          return <p key={index}>{item}</p>;
+        })}
+      </article>
     </section>
   );
 }
